@@ -11,7 +11,7 @@ let userSchema = new Schema({
     age: Number
 }) 
 
-let User = mongoose.model('UserSchema', userSchema, 'user');
+let User = mongoose.model('User', userSchema);
 
 //Logic
 

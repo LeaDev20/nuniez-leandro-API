@@ -11,7 +11,7 @@ let songSchema = new Schema({
     artist: String
 }) 
 
-let Song = mongoose.model('SongSchema', songSchema, 'song');
+let Song = mongoose.model('Song', songSchema);
 
 //Logic
 
