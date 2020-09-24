@@ -11,7 +11,7 @@ let songSchema = new Schema({
     artist: String
 }) 
 
-let Song = mongoose.model('Song', songSchema);
+let Song = mongoose.model('Song', songSchema, 'song');
 
 //Logic
 
@@ -21,5 +21,6 @@ const findAllSongs = async() => {
 }
 
 module.exports = {
+    Song,
     findAllSongs
 }

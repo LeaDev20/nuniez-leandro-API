@@ -15,8 +15,8 @@ const server = express();
 server.use(express.json());
 
 
-server.get("/songs",songRoute.findAllSongs());
-server.get("/songs",userRoute.findAllUsers());
+server.get("/songs", songRoute.findAllSongs);
+server.get("/users", userRoute.findAllUsers);
 
 
 server.listen(5000);

@@ -2,7 +2,7 @@ const userController = require("../controller/userController");
 
 const findAllUsers = async(req, res) => {
     try{
-        const users = await userController.getAllSongs();
+        const users = await userController.getAllUsers();
         if(users.length > 0) {
           res.send(users);
         }
