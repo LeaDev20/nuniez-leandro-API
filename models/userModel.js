@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const songModel = require('../models/songModel')
 
 //Schema
 
@@ -18,7 +17,7 @@ let User = mongoose.model('Users', userSchema, 'user');
 //Logic
 
 const findAllUsers = async() => {
-    const users = await User.find({}).populate("likedSongs");
+    const users = await User.find({}).populate("likedSongs Song");
     return users;
 }
 

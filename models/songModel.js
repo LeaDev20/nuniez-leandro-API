@@ -21,6 +21,5 @@ const findAllSongs = async() => {
 }
 
 module.exports = {
-    Song,
     findAllSongs
 }
