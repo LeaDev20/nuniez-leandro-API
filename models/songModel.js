@@ -20,6 +20,18 @@ const findAllSongs = async() => {
     return songs;
 }
 
+const addNewSong = async(songBody) => {
+    const newSong = await new Song(songBody);
+    newSong.save();
+}
+
+const updateSong = async(name, songBody) => {
+    const songUpdate = await Song.findOneAndUpdate({name: name}, songBody);
+    songUpdate.save();
+}
+
 module.exports = {
-    findAllSongs
+    findAllSongs,
+    addNewSong,
+    updateSong
 }

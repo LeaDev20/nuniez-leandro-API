@@ -21,6 +21,18 @@ const findAllUsers = async() => {
     return users;
 }
 
+const addNewUser = async(userBody) => {
+    const newUser = await new User(userBody);
+    newUser.save();
+}
+
+const updateUser = async(name, userBody) => {
+    const userUpdate = await User.findOneAndUpdate({name: name}, userBody);
+    userUpdate.save();
+}
+
 module.exports = {
     findAllUsers,
+    addNewUser,
+    updateUser
 }
