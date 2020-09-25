@@ -24,5 +24,5 @@ Esta api contiene usuarios y canciones.
 -  'urlbase/:song': Modificar canción.
 ## DELETE 
 -  'urlbase/:user': Eliminar usuario.
--  'urlbase/:user': Eliminar canción.
+-  'urlbase/:song': Eliminar canción.
 -  'urlbase/users/:user/:song': Eliminar canción de lista de canciones favoritas de usuario.
