@@ -18,11 +18,11 @@ Esta api contiene usuarios y canciones.
 ## POST 
 - 'urlbase/users': Agregar usuario.
 - 'urlbase/songs': Agregar canción.
-- 'urlbase/:user/songs': Agregar canción a lista de canciones favoritas de un usuario.
+- 'urlbase/users/:user/songs': Agregar canción a lista de canciones favoritas de un usuario.
 ## PUT 
 -  'urlbase/:user': Modificar usuario.
 -  'urlbase/:song': Modificar canción.
 ## DELETE 
 -  'urlbase/:user': Eliminar usuario.
--  'urlbase/:user': Eliminar canción.
--  'urlbase/:user/:song': Eliminar canción de lista de canciones favoritas de usuario.
+-  'urlbase/:song': Eliminar canción.
+-  'urlbase/users/:user/:song': Eliminar canción de lista de canciones favoritas de usuario.
