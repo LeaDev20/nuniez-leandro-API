@@ -13,16 +13,17 @@ Esta api contiene usuarios y canciones.
 ## GET 
 -  'urlbase/users': Devuelve todos los usuarios.
 -  'urlbase/songs': Devuelve todas las canciones.
-     
-     
+ 
 ## POST 
 - 'urlbase/users': Agregar usuario.
 - 'urlbase/songs': Agregar canción.
-- 'urlbase/users/:user/songs': Agregar canción a lista de canciones favoritas de un usuario.
+- 'urlbase/users/:user/song': Agregar canción a lista de canciones favoritas de un usuario.
+
 ## PUT 
--  'urlbase/:user': Modificar usuario.
--  'urlbase/:song': Modificar canción.
+-  'urlbase/user/:user': Modificar usuario.
+-  'urlbase/song/:song': Modificar canción.
+
 ## DELETE 
--  'urlbase/:user': Eliminar usuario.
--  'urlbase/:song': Eliminar canción.
+-  'urlbase/user/:user': Eliminar usuario.
+-  'urlbase/song/:song': Eliminar canción.
 -  'urlbase/users/:user/:song': Eliminar canción de lista de canciones favoritas de usuario.
