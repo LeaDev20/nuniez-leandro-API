@@ -15,8 +15,23 @@ const updateUser = async(name, userBody) => {
     return await userModel.updateUser(name, userBody);
 }
 
+const deleteUser = async(name) => {
+    return await userModel.deleteUser(name);
+}
+
+const addNewSongToUser = async(name, songId) => {
+    return await userModel.addNewSongToUser(name, songId);
+}
+
+const deleteSongToLikedSong = async(name, songId) => {
+    return await userModel.deleteSongToLikedSong(name, songId);
+}
+
 module.exports = {
     getAllUsers,
     addNewUser,
-    updateUser
+    updateUser,
+    deleteUser,
+    addNewSongToUser,
+    deleteSongToLikedSong
 }

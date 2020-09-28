@@ -42,8 +42,19 @@ const updateSong = async(req, res) => {
   }
 } 
 
+const deleteSong = async(req, res) => {
+  try {
+    const name = req.params.song;
+    songController.deleteSong(name);
+    res.send("Cancion eliminada");
+  } catch (e) {
+    throw e;
+  }
+}
+
 module.exports = {
     findAllSongs,
     addNewSong,
-    updateSong
+    updateSong,
+    deleteSong
 }

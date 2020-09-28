@@ -15,8 +15,13 @@ const updateSong = async(name, songBody) => {
     return await songModel.updateSong(name, songBody);
 }
 
+const deleteSong = async(name) => {
+    return await songModel.deleteSong(name);
+}
+
 module.exports = {
     getAllSongs,
     addNewSong,
-    updateSong
+    updateSong,
+    deleteSong
 }

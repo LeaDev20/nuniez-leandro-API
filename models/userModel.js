@@ -31,8 +31,26 @@ const updateUser = async(name, userBody) => {
     userUpdate.save();
 }
 
+const deleteUser = async(name) => {
+    await User.findOneAndDelete({name: name});
+}
+
+const addNewSongToUser = async(name, songId) => {
+    const user = await User.find({name: name});
+    user[0].likedSongs.push(songId);
+    await user[0].save();
+}
+
+const deleteSongToLikedSong = async(name, songId) => {
+    console.log(name);
+    console.log(songId);
+}
+
 module.exports = {
     findAllUsers,
     addNewUser,
-    updateUser
+    updateUser,
+    deleteUser,
+    addNewSongToUser,
+    deleteSongToLikedSong
 }

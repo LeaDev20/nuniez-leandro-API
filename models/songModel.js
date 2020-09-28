@@ -30,8 +30,14 @@ const updateSong = async(name, songBody) => {
     songUpdate.save();
 }
 
+const deleteSong = async(name) => {
+    console.log(name);
+    await Song.findOneAndDelete({name: name});
+}
+
 module.exports = {
     findAllSongs,
     addNewSong,
-    updateSong
+    updateSong,
+    deleteSong
 }
