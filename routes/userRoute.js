@@ -56,22 +56,19 @@ const addSongToLikedSong = async(req, res) => {
   try {
     const name = req.params.user
     const songId = req.body;
-    const newUser = await userController.addNewSongToUser(name, songId);
-    if(newUser) {
-      res.status(404).send(newUser);
-    } else {
-      res.status(201).send("Canción agregada a lista");
-    }
+    await userController.addNewSongToUser(name, songId);
+    res.status(201).send("Canción agregada a lista");
   } catch(e) {
     throw e;
   }
 }
+
 const deleteSongToLikedSong = async(req, res) => {
   try {
     const name = req.params.user;
     const songId = req.params.song;
-    userController.deleteSongToLikedSong(name, songId);
-    res.send("Canción eliminada de lista");
+    await userController.deleteSongToLikedSong(name, songId);
+    res.status(201).send("Canción eliminada de lista");
   } catch (e) {
     throw e;
   }
