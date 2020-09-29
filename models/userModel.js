@@ -42,8 +42,9 @@ const addNewSongToUser = async(name, songId) => {
 }
 
 const deleteSongToLikedSong = async(name, songId) => {
-    console.log(name);
-    console.log(songId);
+    const user = await User.find({name: name});
+    user[0].likedSongs.remove(songId);
+    await user[0].save();
 }
 
 module.exports = {
