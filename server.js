@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const songRoute = require("./routes/songRoute");
 const userRoute = require("./routes/userRoute");
 
@@ -12,6 +13,7 @@ db.once('open', function() {
 });
 
 const server = express();
+server.use(cors());
 server.use(express.json());
 
 server.route("/songs")
@@ -35,4 +37,4 @@ server.route("/user/:user")
 server.post("/users/:user/song", userRoute.addSongToLikedSong)
 server.delete("/users/:user/:song", userRoute.deleteSongToLikedSong)
 
-server.listen(5000);
+server.listen(process.env.PORT);
