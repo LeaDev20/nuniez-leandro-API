@@ -29,7 +29,7 @@ const addNewUser = async(req, res) => {
 
 const updateUser = async(req, res) => {
   try {
-    const name = req.params.user;
+    const name = req.params.nameUser;
     const userBody = req.body;
     const userUpdated = await userController.updateUser(name, userBody);
     if (userUpdated){
@@ -44,7 +44,7 @@ const updateUser = async(req, res) => {
 
 const deleteUser = async(req, res) => {
   try {
-    const name = req.params.user;
+    const name = req.params.nameUser;
     userController.deleteUser(name);
     res.send("Usuario eliminado");
   } catch (e) {
@@ -54,7 +54,7 @@ const deleteUser = async(req, res) => {
 
 const addSongToLikedSong = async(req, res) => {
   try {
-    const name = req.params.user
+    const name = req.params.nameUser
     const songId = req.body;
     await userController.addNewSongToUser(name, songId);
     res.status(201).send("Canción agregada a lista");
@@ -65,8 +65,8 @@ const addSongToLikedSong = async(req, res) => {
 
 const deleteSongToLikedSong = async(req, res) => {
   try {
-    const name = req.params.user;
-    const songId = req.params.song;
+    const name = req.params.nameUser;
+    const songId = req.params.nameSong;
     await userController.deleteSongToLikedSong(name, songId);
     res.status(201).send("Canción eliminada de lista");
   } catch (e) {

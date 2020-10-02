@@ -29,7 +29,7 @@ const addNewSong = async(req, res) => {
 
 const updateSong = async(req, res) => {
   try {
-    const name = req.params.song;
+    const name = req.params.nameSong;
     const songBody = req.body;
     const songUpdated = await songController.updateSong(name, songBody);
     if (songUpdated){
@@ -44,7 +44,7 @@ const updateSong = async(req, res) => {
 
 const deleteSong = async(req, res) => {
   try {
-    const name = req.params.song;
+    const name = req.params.nameSong;
     songController.deleteSong(name);
     res.send("Cancion eliminada");
   } catch (e) {

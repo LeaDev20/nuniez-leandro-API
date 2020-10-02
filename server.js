@@ -24,17 +24,17 @@ server.route("/users")
   .get(userRoute.findAllUsers)
   .post(userRoute.addNewUser)
 
-server.route("/song/:song")
+server.route("/song/:nameSong")
   .put(songRoute.updateSong)
   .delete(songRoute.deleteSong)
 
-server.route("/user/:user")
+server.route("/user/:nameUser")
   .put(userRoute.updateUser)
   .delete(userRoute.deleteUser)
 
 // Agregar/Eliminar canciones a lista de canciones favoritas de un usuario:
 
-server.post("/users/:user/song", userRoute.addSongToLikedSong)
-server.delete("/users/:user/:song", userRoute.deleteSongToLikedSong)
+server.post("/users/:nameUser/song", userRoute.addSongToLikedSong)
+server.delete("/users/:nameUser/:nameSong", userRoute.deleteSongToLikedSong)
 
 server.listen(process.env.PORT);
