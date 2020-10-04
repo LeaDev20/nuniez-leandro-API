@@ -25,10 +25,12 @@ server.route("/users")
   .post(userRoute.addNewUser)
 
 server.route("/song/:nameSong")
+  .get(songRoute.findSong)
   .put(songRoute.updateSong)
   .delete(songRoute.deleteSong)
 
 server.route("/user/:nameUser")
+  .get(userRoute.findUser)
   .put(userRoute.updateUser)
   .delete(userRoute.deleteUser)
 

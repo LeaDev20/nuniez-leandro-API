@@ -4,6 +4,10 @@ const getAllSongs = async() => {
     return await songModel.findAllSongs();
 }
 
+const getSong = async(name) => {
+    return await songModel.findSong(name);
+}
+
 const addNewSong = async(songBody) => {
     if(songBody.name && songBody.album && songBody.duration && songBody.artist){
         return await songModel.addNewSong(songBody);
@@ -21,6 +25,7 @@ const deleteSong = async(name) => {
 
 module.exports = {
     getAllSongs,
+    getSong,
     addNewSong,
     updateSong,
     deleteSong

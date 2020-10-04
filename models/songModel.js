@@ -20,6 +20,11 @@ const findAllSongs = async() => {
     return songs;
 }
 
+const findSong = async(name) => {
+    const song = await Song.find({name: name});
+    return song;
+}
+
 const addNewSong = async(songBody) => {
     const newSong = await new Song(songBody);
     newSong.save();
@@ -37,6 +42,7 @@ const deleteSong = async(name) => {
 
 module.exports = {
     findAllSongs,
+    findSong,
     addNewSong,
     updateSong,
     deleteSong

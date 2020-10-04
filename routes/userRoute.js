@@ -10,7 +10,21 @@ const findAllUsers = async(req, res) => {
   } catch(e) {
     res.status(500).send("Error interno del servidor")
     throw e;
+  }
 }
+
+const findUser = async(req, res) => {
+  try{
+    const name = req.params.nameUser;
+    const user = await userController.getUser(name);
+    if(user.length > 0) {
+      res.send(user);
+    }
+    res.send("El usuario no existe");
+  } catch(e) {
+    res.status(500).send("Error interno del servidor")
+    throw e;
+  }
 }
 
 const addNewUser = async(req, res) => {
@@ -76,6 +90,7 @@ const deleteSongToLikedSong = async(req, res) => {
 
 module.exports = {
     findAllUsers,
+    findUser,
     addNewUser,
     updateUser,
     deleteUser,

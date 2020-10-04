@@ -21,6 +21,11 @@ const findAllUsers = async() => {
     return users;
 }
 
+const findUser = async(name) => {
+    const user = await User.find({name: name}).populate("likedSongs Song");
+    return user;
+}
+
 const addNewUser = async(userBody) => {
     const newUser = await new User(userBody);
     newUser.save();
@@ -49,6 +54,7 @@ const deleteSongToLikedSong = async(name, songId) => {
 
 module.exports = {
     findAllUsers,
+    findUser,
     addNewUser,
     updateUser,
     deleteUser,

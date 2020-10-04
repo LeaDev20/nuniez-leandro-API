@@ -4,6 +4,10 @@ const getAllUsers = async() => {
     return await userModel.findAllUsers();
 }
 
+const getUser = async(name) => {
+    return await userModel.findUser(name);
+}
+
 const addNewUser = async(userBody) => {
     if(userBody.name && userBody.lastname && userBody.mail && userBody.age){
         return await userModel.addNewUser(userBody);
@@ -29,6 +33,7 @@ const deleteSongToLikedSong = async(name, songId) => {
 
 module.exports = {
     getAllUsers,
+    getUser,
     addNewUser,
     updateUser,
     deleteUser,

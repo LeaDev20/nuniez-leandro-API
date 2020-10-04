@@ -13,6 +13,20 @@ const findAllSongs = async(req, res) => {
     }
 }
 
+const findSong = async(req, res) => {
+  try{
+    const name = req.params.nameSong;
+    const song = await songController.getSong(name);
+    if(song.length > 0) {
+      res.send(song);
+    }
+    res.send("La canción no existe");
+  } catch(e) {
+    res.status(500).send("Error interno del servidor")
+    throw e;
+  }
+}
+
 const addNewSong = async(req, res) => {
   try {
     const songBody = req.body;
@@ -54,6 +68,7 @@ const deleteSong = async(req, res) => {
 
 module.exports = {
     findAllSongs,
+    findSong,
     addNewSong,
     updateSong,
     deleteSong
