@@ -15,6 +15,8 @@ Esta api contiene usuarios y canciones.
 ## GET 
 -  'urlbase/users': Devuelve todos los usuarios.
 -  'urlbase/songs': Devuelve todas las canciones.
+-  'urlbase/user/:user': Devuelve un usuario.
+-  'urlbase/song/:song': Devuelve una canción.
  
 ## POST 
 - 'urlbase/users': Agregar usuario.
