@@ -1,7 +1,7 @@
 # Contrato de API
 
 Esta api contiene usuarios y canciones.
-**URLBASE:** https://api-matea.herokuapp.com/
+- **URLBASE:** https://api-matea.herokuapp.com/
 
 ## Especificaciones:
 1.  El formato de la informacion que se envie a la API debera ser **JSON**.
